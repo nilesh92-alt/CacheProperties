@@ -1,0 +1,8 @@
+ratelimit:
+  configs:
+    - webhookUrl: http-bin
+      limit: 10
+    - webhookUrl: citi/master
+      limit: 20
+    - webhookUrl: zolo-bank
+      limit: 100
