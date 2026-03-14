@@ -5,4 +5,4 @@ ratelimit:
     - webhookUrl: citi/master
       limit: 20
     - webhookUrl: zolo-bank
-      limit: 100
+      limit: 30

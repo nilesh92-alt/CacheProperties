@@ -1,20 +1,20 @@
 package com.example.test;
 
 import jakarta.annotation.PostConstruct;
-import lombok.Data;
 import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
 
-@Component
 @RequiredArgsConstructor
 public class RateLimitCache {
 
     private final RateLimitProperties rateLimitProperties;
 
-    private Map<String, Integer> rateLimitMap = new HashMap<>();
+    private final ConcurrentHashMap<String, Integer> rateLimitMap = new ConcurrentHashMap<>();
 
 
     @PostConstruct
@@ -24,6 +24,8 @@ public class RateLimitCache {
                 .forEach(config ->
                         rateLimitMap.put(config.getWebhookUrl(), config.getLimit())
                 );
+
+        System.out.println("loading data" + rateLimitMap);
     }
 
     public Integer getLimit(String webhookUrl) {
