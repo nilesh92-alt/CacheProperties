@@ -1,20 +1,18 @@
 package com.example.test;
 
+import lombok.Data;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
+import java.util.Map;
 
 @ConfigurationProperties(prefix = "ratelimit")
+@Data
 public class RateLimitProperties {
 
-    private List<RateLimitConfig> configs;
+//    private List<RateLimitConfig> configs;
 
-    public List<RateLimitConfig> getConfigs() {
-        return configs;
-    }
+    private Map<String, RateLimitConfig> configs;
 
-    public void setConfigs(List<RateLimitConfig> configs) {
-        this.configs = configs;
-    }
 }

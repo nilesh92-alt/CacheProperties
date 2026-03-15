@@ -1,0 +1,16 @@
+#spring:
+#  cache:
+#    type: caffeine
+#    cache-names:
+#      - customerLimit
+#    caffeine:
+#      spec: maximumSize=500,expireAfterWrite=2m
+#
+#ratelimit:
+#  configs:
+#    - webhookUrl: http-bin
+#      limit: 50
+#    - webhookUrl: citi/master
+#      limit: 50
+#    - webhookUrl: zolo-bank
+#      limit: 70

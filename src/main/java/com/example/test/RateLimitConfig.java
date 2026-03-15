@@ -5,6 +5,6 @@ import lombok.Data;
 @Data
 public class RateLimitConfig {
 
-    private String webhookUrl;
+//    private String webhookUrl;
     private int limit;
 }
